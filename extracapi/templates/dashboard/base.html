@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="{{ url_for('static', path='dashboard/css/style.css')}}">
+
+  <title>Dashboard</title>
+</head>
+
+<body>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <a href="{{url_for('logout')}}"><i class="power material-icons">settings_power</i></a>
+            <!-- Dropdown Trigger -->
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- Page Layout here -->
+<div class="row">
+</br></br>
+    <div class="col s2 fixed">
+        <!-- Grey navigation panel -->
+        </br></br>
+        <ul id="slide-out" class="side-nav fixed">
+        </br></br>
+            <img src="{{ url_for('static', path='dashboard/img/LOGO-MINIMAL-APP.png')}}">
+            </br></br>
+            <a href="{{url_for('dashboard')}}"><li class="material-icons">autorenew </li> Analizar Url</a>
+            <a href=""><li class="material-icons">person_pin</li> Construcción</a>
+        </ul>
+        
+    </div>
+    <div>
+
+    {% block content %}
+  
+    {% endblock %}
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+</body>
+
+<!-- FIXED ACTION BUTTON -->
+<div class="fixed-action-btn vertical">
+  <a class="btn-floating btn-large  blue-grey darken-4">
+      <i class="Medium material-icons">apps</i>
+  </a>
+  <ul>
+      
+      <li><a href="/" class="btn-floating  blue darken-4"><i class="Medium material-icons">arrow_back</i>HOME</a></li>
+      <li><a href="{{url_for('dashboard')}}" class="btn-floating cyan lighten-1"><i class="Medium material-icons">keyboard_tab</i>Dashboard</a></li>
+      
+      <li><a href="{{url_for('login')}}" class="btn-floating cyan lighten-1"><i class="Medium material-icons">assignment</i>LOGIN</a></li>
+  </ul>
+</div>
+
+</html>

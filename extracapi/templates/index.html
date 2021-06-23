@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='index/css/style.css')}}">
+
+    <title>Inicio</title>
+</head>
+
+<body>
+    <!-- Landing Screen -->
+    <div class="section" id="landing">
+        <h5 id="mainText" class="center">RavenFlastApi</h5>
+        <h1 style="color: rgb(230, 230, 230);" class="center">
+            Extrac<b>App</b>
+        </h1>
+        <p class="center">Lorem Ipsum is simply dummy text of the printing and typesetting</br>industry. Lorem Ipsum has
+            been the industry's</p>
+        <h6 id="mainText" class="center">--www.jadcode.com--</h6>
+    </div>
+    <!-- FIXED ACTION BUTTON -->
+    <div class="fixed-action-btn vertical">
+        <a class="btn-floating btn-large  blue-grey darken-4">
+            <i class="Medium material-icons">apps</i>
+        </a>
+        <ul>
+            <li><a href="{{url_for('index')}}" class="btn-floating  blue darken-4"><i class="Medium material-icons">arrow_back</i>HOME</a></li>
+           
+            <li><a href="{{url_for('dashboard')}}" class="btn-floating cyan lighten-1"><i class="Medium material-icons">keyboard_tab</i>Dashboard</a></li>
+            
+            <li><a href="{{url_for('login')}}" class="btn-floating cyan lighten-1"><i class="Medium material-icons">assignment</i>LOGIN</a></li>
+        </ul>
+    </div>
+</body>
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</html>

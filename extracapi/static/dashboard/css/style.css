@@ -1,0 +1,136 @@
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(56, 56, 56);
+    color: rgb(242, 242, 242);
+}
+
+#landing{
+    height: 100vh;
+    background-image: url('/static/index/img/2fondo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+#mainText{
+    margin-top: 30vh;
+}
+
+
+#slide-out{
+    background-color: rgb(56, 56, 56);
+    width: 15%;
+}
+
+#slide-out a{
+    color: white;
+    display: flex;
+    padding: 10px;
+}
+
+#table{
+    border-collapse: collapse;
+    border: 1px solid rgb(114, 114, 114);
+    margin-top: 10px;
+    box-shadow: 0 1px 0 0 rgb(84, 83, 83);
+    margin-bottom: 30px;
+    animation-fill-mode: forwards;
+    align-content: center;
+}
+
+
+
+#watch a{
+    color: rgb(3, 101, 126);
+    margin-right: 3px;
+    
+}
+
+#download a{
+    color: rgb(5, 130, 202);
+    margin-right: 3px;
+    
+}
+
+.delete a{
+    color: rgb(163, 12, 1);
+    
+}
+
+
+.buttons{
+    background-color: grey;
+    width: 150px;
+    height: 40px;
+    padding: 10px;
+    color: black;
+    margin-right: 3px;
+    
+}
+
+.buttons:hover{
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+
+.nav-wrapper{
+    background-color: rgb(56, 56, 56);
+}
+
+
+.power{
+    margin-right: 40px;
+}
+
+
+input[type="checkbox"]:not(:checked), input[type="checkbox"]:checked {
+     position: relative !important;
+     left: 0px !important; 
+     opacity: 1 !important;
+     width: 20px;
+     height: 20px;
+}
+
+
+.card{
+    opacity: 0.7 !important;
+    color: black;
+}
+
+body.login{
+    background-image: url('/static/index/img/fondo.jpg');
+    align-items: center;
+}
+
+
+
+
+input[type="submit"]{
+    border: 0px;
+    background-color: rgb(1, 55, 56);
+    color: rgb(255, 255, 255);
+    width: 150px;
+    height: 50PX;
+}
+
+
+.resultado{
+    color: rgb(255, 65, 201);
+    background-color: rgb(38, 38, 38);
+    border-radius: 10px;
+    padding: 5px;
+    text-align: justify;
+    width: 100%;
+    height: auto;
+    word-wrap: break-word;
+    font-size: small;
+    
+}
+

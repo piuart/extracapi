@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(4, 153, 163);
+    color: rgba(37, 37, 37, 0.8);
+}
+#landing{
+    height: 100vh;
+    background-image: url('/static/index/img/2fondo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+}
+#mainText{
+    margin-top: 30vh;
+}
+
