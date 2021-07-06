@@ -1,0 +1,43 @@
+{% extends 'dashboard/base.html' %}
+
+
+{% block content %}
+<div class="col s10 fixed">
+    <div class="row">
+        <div class="col s12 m3">
+            <p>
+            <h3>Analizar File</h3>
+            <br />
+            <form method="post">
+                <input type="file" name="archive" required/>
+                </br></br>
+                <input type="submit" value=" Analizar "> 
+            </form>
+            <br />
+            <a href="{{url_for('test_file')}}" class="buttons waves-light btn-small"> Borrar para seguir analizando... </a>
+            <p>
+            <br />
+            <br />
+            <h6>Importante:</h6>
+            <img src="{{ url_for('static', path='dashboard/img/files.png')}}">
+            Antes de hacer un análisis copia tus archivos dentro de la carpeta files
+            dentro del proyecto.
+            Con el  Boton seleccionar archivo buscalo en la ruta File dentro del proyecto,
+            seleccionalo y pincha en analizar.
+            </p>
+        </div>
+        <div class="col s12 m8">
+            <br/>
+            <h6>Resultados del análisis: </h6>
+            <div>
+            <p class="resultado">{{ urls_path }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+</div>
+</br></br>
+</div>
+</div>
+{% endblock %}

@@ -16,8 +16,9 @@ from starlette.responses import RedirectResponse
 
 #-------------------------------------------------------------------
 
-
-from slave import esclavo
+import os
+from slave_url import slaveUrl
+from slave_file import slaveFile
 from login import user as userModel
 
 
@@ -120,22 +121,7 @@ def logout(request: Request, user=Depends(manager)):
     return resp  
 
 
-#---------------en construcción--------------------------------------
-
-
-@app.get('/analizar_url')
-def analizar_url(request : Request, user=Depends(manager)):
-    return templates.TemplateResponse("dashboard/analizar_url", {"request": request, "username": user["username"]})
-
-
-@app.get('/listado_archivos')
-def listado_archivos(request : Request, user=Depends(manager)):
-    return templates.TemplateResponse("dashboard/dashboard.html", {"request": request, "username": user["username"]})    
-
-
-
-
-#------------------------------------------------------------------
+#----------------ANÁLISIS DE URL-------------------------------------
 
 
 @app.get('/dashboard/')
@@ -148,8 +134,27 @@ def dashboard(request : Request, user=Depends(manager)):
 def dashboard(request : Request, user=Depends(manager), ulr : str = Form(...)):
     ur = ulr
     print(ur)
-    js = esclavo(ur)
+    js = slaveUrl(ur)
     return templates.TemplateResponse("dashboard/dashboard.html", context={"request": request, "username": user["username"] , "urls": js, "resultado": " "}) 
 
 
+#---------------ANÁLISIS DE ARCHIVOS O FICHEROS--------------------------------------
 
+
+@app.get('/test_file/')
+def test_file(request : Request, user=Depends(manager)):
+    return templates.TemplateResponse("dashboard/test_file.html", {"request": request, "username": user["username"]})
+
+
+@app.post('/test_file/')
+def test_file(request : Request, user=Depends(manager), archive : str = Form(...)):
+    file = archive
+    simple_path = './files/'
+    route_simp_path = simple_path.replace("/","/")
+    print('----------------------------------------')
+    print(route_simp_path)
+    abs_path = os.path.abspath(simple_path+file)
+    new_route = os.path.join(abs_path)
+    print(new_route)
+    js = slaveFile(new_route)
+    return templates.TemplateResponse("dashboard/test_file.html", context={"request": request,"username": user["username"], "urls": file, "urls_path": js, "resultado": " " }) 
